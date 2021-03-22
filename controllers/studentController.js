@@ -4,10 +4,9 @@ const models = sequelize().models;
 
 const getAllStudents = async () => {
     try {
-        let students = models.Student.findAll();
-        if (students) {
-            return students;
-        }
+        let students = [];
+        students = await models.Student.findAll();
+        return students;        
     } catch (error) {
         return error
     }
@@ -24,7 +23,7 @@ const getStudentAttendanceStatus = async (studentId, classId) => {
         })
         return student
     } catch (error) {
-
+        console.error(error);
     }
 }
 

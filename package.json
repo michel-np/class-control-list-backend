@@ -2,22 +2,27 @@
   "name": "class-attendance-list-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "test": "mocha",
+    "start": "node app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chai": "^4.3.1",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "mocha": "^8.3.0",
     "sequelize": "^6.5.0",
     "sqlite3": "^5.0.2"
   },
   "devDependencies": {
-    "sequelize-cli": "^6.2.0"
+    "chai-arrays": "^2.2.0",
+    "chai-things": "^0.2.0",
+    "sequelize-cli": "^6.2.0",
+    "supertest": "^6.1.3"
   }
 }

@@ -12,8 +12,12 @@ router.get("/get-classes", async (req, res, next) => {
 })
 
 router.get("/get-classes/:id", async (req, res, next) => {
-    let classes = await studyClassController.getClassesById(req.params.id)
-    res.status(200).send(classes);
+    try {
+        let classes = await studyClassController.getClassesById(req.params.id)
+        res.status(200).send(classes);
+    } catch (error) {  
+        next(error);
+    }
 })
 
 router.get("/get-students-from-class/:id", async (req, res, next) => {
